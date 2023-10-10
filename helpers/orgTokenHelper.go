@@ -8,8 +8,8 @@ import (
 	"time"
 
 	"github.com/dgrijalva/jwt-go"
-	"github.com/dipper-lab/asctp-auth/consts"
-	"github.com/dipper-lab/asctp-auth/database"
+	"github.com/dipper-lab/asctp-esntls/consts"
+	"github.com/dipper-lab/asctp-esntls/database"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"

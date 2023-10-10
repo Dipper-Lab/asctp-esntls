@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/dipper-lab/asctp-auth/database"
+	"github.com/dipper-lab/asctp-esntls/database"
 	"go.mongodb.org/mongo-driver/bson"
 )
 
