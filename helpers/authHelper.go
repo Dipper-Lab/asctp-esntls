@@ -7,7 +7,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/Dipper-Lab/asctp-auth/mail"
+	"github.com/dipper-lab/asctp-auth/mail"
 
 	"github.com/joho/godotenv"
 	"golang.org/x/crypto/bcrypt"

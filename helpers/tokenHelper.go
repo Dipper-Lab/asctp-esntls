@@ -7,8 +7,8 @@ import (
 	"os"
 	"time"
 
-	"github.com/Dipper-Lab/asctp-auth/database"
 	"github.com/dgrijalva/jwt-go"
+	"github.com/dipper-lab/asctp-auth/database"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
