@@ -2,6 +2,7 @@ package helpers
 
 import (
 	"context"
+	"net/http"
 	"time"
 
 	"github.com/dipper-lab/asctp-esntls/database"
@@ -23,4 +24,18 @@ func CheckIfExistsInCollection(dbName string, collectionName string, key string,
 		return true, nil
 	}
 	return false, nil
+}
+
+func ValidateProperty(dbName string, collectionName string, propertyKey string, propertyValue string) (bool, int, string) {
+	isProduceIdValid, err := CheckIfExistsInCollection(dbName, collectionName, propertyKey, propertyValue)
+	if err != nil {
+		return false, http.StatusInternalServerError, "error occurred whilst validating produce id"
+
+	}
+
+	if !isProduceIdValid {
+		return false, http.StatusBadRequest, "produce id is invalid"
+	}
+
+	return true, 0, ""
 }

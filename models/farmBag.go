@@ -8,7 +8,7 @@ type FarmBag struct {
 	ProduceId string    `bson:"produce_id" json:"produce_id"`
 	Weight    float32   `bson:"weight" json:"weight"`
 	Price     float32   `bson:"price" json:"price"`
-	Farm      string    `bson:"farm" json:"farm"`
+	FarmId    string    `bson:"farm_id" json:"farm_id"`
 	Status    string    `bson:"status" json:"status"` //unused, purchased, batched
 	BatchId   string    `bson:"batch_id" json:"batch_id"`
 	FarmBagId string    `bson:"farmBag_id" json:"farmBag_id"`
