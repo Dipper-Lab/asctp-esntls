@@ -27,13 +27,13 @@ func CheckIfExistsInCollection(dbName string, collectionName string, key string,
 }
 
 func ValidateProperty(dbName string, collectionName string, propertyKey string, propertyValue string) (bool, int, string) {
-	isProduceIdValid, err := CheckIfExistsInCollection(dbName, collectionName, propertyKey, propertyValue)
+	isPropertyValid, err := CheckIfExistsInCollection(dbName, collectionName, propertyKey, propertyValue)
 	if err != nil {
 		return false, http.StatusInternalServerError, "error occurred whilst validating produce id"
 
 	}
 
-	if !isProduceIdValid {
+	if !isPropertyValid {
 		return false, http.StatusBadRequest, "produce id is invalid"
 	}
 
