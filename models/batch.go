@@ -15,6 +15,6 @@ type Batch struct {
 	State       string             `bson:"state" json:"state"`
 	BatchId     string             `bson:"batch_id" json:"batch_id"`
 	NfcUids     []string           `bson:"nfc_uid" json:"nfc_uid"`
-	CreatedAt   *time.Time         `bson:"created_at" json:"created_at"`
-	UpdatedAt   *time.Time         `bson:"updated_at" json:"updated_at"`
+	CreatedAt   time.Time          `bson:"created_at" json:"created_at"`
+	UpdatedAt   time.Time          `bson:"updated_at" json:"updated_at"`
 }
