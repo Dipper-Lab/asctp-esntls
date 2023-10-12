@@ -4,7 +4,7 @@ const SystemDbName = "system-db"
 
 const SupplierCollectionName = "supplier"
 const ProduceCollectionName = "produce"
-const FarmBagCollection = "farmBag"
+const FarmBagCollection = "farmerBag"
 const UserCollectionName = "user"
 const BatchCollection = "batch"
 const FacilityCollection = "facility"
