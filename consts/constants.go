@@ -2,7 +2,7 @@ package consts
 
 const SystemDbName = "system-db"
 
-const SupplierCollectionMame = "supplier"
+const SupplierCollectionName = "supplier"
 const ProduceCollectionName = "produce"
 const FarmBagCollection = "farmBag"
 const UserCollectionName = "user"
