@@ -11,7 +11,7 @@ type Batch struct {
 	BatchNumber string             `bson:"batch_number" json:"batch_number"`
 	ProduceId   string             `bson:"produce_id" json:"produce_id"`
 	FarmBags    []FarmBag          `bson:"farmBags" json:"farmBags"`
-	Farms       []Farm             `bson:"farm_ids" json:"farm_ids"`
+	Suppliers   []Supplier         `bson:"suppliers" json:"suppliers"`
 	State       string             `bson:"state" json:"state"`
 	BatchId     string             `bson:"batch_id" json:"batch_id"`
 	NfcUids     []string           `bson:"nfc_uid" json:"nfc_uid"`
