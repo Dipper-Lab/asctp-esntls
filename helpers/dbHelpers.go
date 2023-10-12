@@ -34,7 +34,7 @@ func ValidateProperty(dbName string, collectionName string, propertyKey string, 
 	}
 
 	if !isPropertyValid {
-		return false, http.StatusBadRequest, "produce id is invalid"
+		return false, http.StatusBadRequest, propertyKey + " is invalid"
 	}
 
 	return true, 0, ""
