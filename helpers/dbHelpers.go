@@ -39,3 +39,5 @@ func ValidateProperty(dbName string, collectionName string, propertyKey string, 
 
 	return true, 0, ""
 }
+
+//waste comment
