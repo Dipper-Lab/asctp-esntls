@@ -12,6 +12,7 @@ type Supplier struct {
 	Contact    string             `bson:"contact" json:"contact" validate:"required,min=10,max=10"`
 	Location   string             `bson:"location" json:"location"`
 	SupplierId string             `bson:"supplier_id" json:"supplier_id" validate:"required"`
+	ProduceIds []string           `bson:"produce_ids" json:"produce_ids"`
 	CreatedAt  time.Time          `bson:"created_at" json:"created_at"`
 	UpdatedAt  time.Time          `bson:"updated_at" json:"updated_at"`
 }
