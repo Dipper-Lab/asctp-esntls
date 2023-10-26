@@ -40,4 +40,36 @@ func ValidateProperty(dbName string, collectionName string, propertyKey string, 
 	return true, 0, ""
 }
 
+func ValidatePropertyList(dbName string, collectionName string, propertyKey string, propertyValues []string) (bool, int, string) {
+
+	for _, propertyValue := range propertyValues {
+		isPropertyValid, err := CheckIfExistsInCollection(dbName, collectionName, propertyKey, propertyValue)
+		if err != nil {
+			return false, http.StatusInternalServerError, "error occurred whilst validating produce id"
+
+		}
+		if !isPropertyValid {
+			return false, http.StatusBadRequest, propertyKey + " is invalid"
+		}
+	}
+
+	return true, 0, ""
+}
+
+func ValidatePropertiesWithMap(dbName string, collectionName string, properties map[string]string) (bool, int, string) {
+
+	for propertyKey, propertyValue := range properties {
+		isPropertyValid, err := CheckIfExistsInCollection(dbName, collectionName, propertyKey, propertyValue)
+		if err != nil {
+			return false, http.StatusInternalServerError, "error occurred whilst validating produce id"
+
+		}
+		if !isPropertyValid {
+			return false, http.StatusBadRequest, propertyKey + " is invalid"
+		}
+	}
+
+	return true, 0, ""
+}
+
 //waste comment
