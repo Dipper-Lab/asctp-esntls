@@ -8,12 +8,12 @@ import (
 	"golang.org/x/exp/slices"
 )
 
-func ValidateRole(c *gin.Context, functionality string) {
+func ValidateRole(c *gin.Context, functionality string) bool {
 
 	if !slices.Contains(consts.RBACMap[c.GetString("role")], functionality) {
 
 		c.JSON(http.StatusBadRequest, gin.H{"error": "user unauthorized"})
-		return
+		return false
 	}
-
+	return true
 }
