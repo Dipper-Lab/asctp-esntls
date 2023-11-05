@@ -18,6 +18,7 @@ type ZeroFlyBag struct {
 				detached_at:time.Time
 			}
 	*/
+	Status    string    `bson:"status" json:"status"`
 	Location  string    `bson:"location" json:"location"`
 	CreatedAt time.Time `bson:"created_at"   json:"created_at"`
 	UpdatedAt time.Time `bson:"updated_at" json:"updated_at"`
