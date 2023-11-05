@@ -1,21 +1,5 @@
 package consts
 
-var roles = [4]string{"ADMIN", "FIELD-OFFICER", "ATTENDANT", ""}
-
-//feature lists
-/*
-~ Purchasing ->  FO
-~ Receive farmbags ->  FO
-~ Receive zerofly bags -> Attendant
-~ batch farmbags ->  FO
-~ Attach recorded values ->  FO
-~ attach batch to zerofly bags  ->  FO
-~ Report sale and defect -> Attendant
-~ Register NFC bag -> ADMIN
-~ Initiate transport -> FO, Attendant
-~ receive transport -> Attendant
-*/
-
 const PurchaseFeatures = "PURCHASE"
 const ReceiveFarmBags = "RECEIVE-FB"
 const ReceiveZeroFlyBags = "RECEIVE-ZFB"
@@ -27,9 +11,67 @@ const RegisterNFC = "REGISTER-NFC"
 const TransportInitiate = "TRANSPORT-INIT"
 const TransportReceive = "TRANSPORT-RECEIVE"
 
+const PurchaseView = "PURCHASE-VIEW"
+const BatchView = "BATCH-VIEW"
+const FarmBagsView = "FB-VIEW"
+const ZeroFlyBagView = "ZFB-VIEW"
+const ReportsView = "REPORTS-VIEW"
+const TransportView = "TRANSPORT-VIEW"
+
 var RBACMap = map[string][]string{
-	"ADMIN":         {PurchaseFeatures, ReceiveFarmBags, ReceiveZeroFlyBags, BatchFarmBags, BatchZeroFlyBags, AttachRecordedValues, Reports, RegisterNFC, TransportInitiate, TransportReceive},
-	"FIELD-OFFICER": {PurchaseFeatures, ReceiveFarmBags, BatchFarmBags, BatchZeroFlyBags, AttachRecordedValues, TransportInitiate},
-	"ATTENDANT":     {ReceiveZeroFlyBags, TransportInitiate, TransportReceive, Reports},
-	"":              {PurchaseFeatures, ReceiveFarmBags, ReceiveZeroFlyBags, BatchFarmBags, BatchZeroFlyBags, AttachRecordedValues, Reports, RegisterNFC, TransportInitiate, TransportReceive},
+	"ADMIN": {
+		PurchaseFeatures,
+		ReceiveFarmBags,
+		ReceiveZeroFlyBags,
+		BatchFarmBags,
+		BatchZeroFlyBags,
+		AttachRecordedValues,
+		Reports,
+		RegisterNFC,
+		TransportInitiate,
+		TransportReceive,
+		BatchView,
+		FarmBagsView,
+		PurchaseView,
+		ZeroFlyBagView,
+		ReportsView,
+		TransportView,
+	},
+	"FIELD-OFFICER": {
+		PurchaseFeatures,
+		ReceiveFarmBags,
+		BatchFarmBags,
+		BatchZeroFlyBags,
+		AttachRecordedValues,
+		TransportInitiate,
+		BatchView,
+		FarmBagsView,
+		PurchaseView,
+		ZeroFlyBagView,
+		TransportView,
+	},
+	"ATTENDANT": {
+		ReceiveZeroFlyBags,
+		TransportInitiate,
+		TransportReceive,
+		Reports,
+	},
+	"": {
+		PurchaseFeatures,
+		ReceiveFarmBags,
+		ReceiveZeroFlyBags,
+		BatchFarmBags,
+		BatchZeroFlyBags,
+		AttachRecordedValues,
+		Reports,
+		RegisterNFC,
+		TransportInitiate,
+		TransportReceive,
+		BatchView,
+		FarmBagsView,
+		PurchaseView,
+		ZeroFlyBagView,
+		ReportsView,
+		TransportView,
+	},
 }
