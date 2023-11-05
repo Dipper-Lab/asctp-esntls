@@ -17,3 +17,5 @@ func ValidateRole(c *gin.Context, functionality string) bool {
 	}
 	return true
 }
+
+// role bug fix
