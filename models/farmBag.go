@@ -5,7 +5,7 @@ import "time"
 type FarmBag struct {
 	Id              string     `bson:"_id" validate:"required"`
 	BagNumber       string     `bson:"bag_number" json:"bag_number"` //format : MMDDYYXXXX
-	PurchaseId      string     `bson:"purchase_id" bson:"purchase_id"`
+	PurchaseId      string     `bson:"purchase_id" json:"purchase_id"`
 	Weight          float32    `bson:"weight" json:"weight"`
 	Price           float32    `bson:"price" json:"price"`
 	MoistureHistory []Moisture `bson:"moisture_history" json:"moisture_history"`
