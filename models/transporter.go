@@ -8,7 +8,7 @@ import (
 
 type Transporter struct {
 	Id            primitive.ObjectID `bson:"_id" validate:"required"`
-	Name          string             `bson:"name" json:"name" validate:"required,min=5,max=15"`
+	Name          string             `bson:"name" json:"name" validate:"required,min=5,max=30"`
 	License       string             `bson:"license" json:"license"`
 	Contact       string             `bson:"contact" json:"contact" validate:"required,min=10,max=10"`
 	TransporterId string             `bson:"transporter_id"  json:"transporter_id"`

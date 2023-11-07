@@ -8,6 +8,7 @@ import (
 
 type Transport struct {
 	Id            primitive.ObjectID `bson:"_id" validate:"required"`
+	TransportID   string             `bson:"transport_id" json:"transport_id"`
 	TransporterID string             `bson:"transporter_id" json:"transporter_id"`
 	FacilityID    string             `bson:"facility_id" json:"facility_id"`
 	NfcUids       []string           `bson:"nfc_uid" json:"nfc_uid"`
