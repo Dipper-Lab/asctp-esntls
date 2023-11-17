@@ -11,6 +11,7 @@ type Sale struct {
 	SaleNumber string             `bson:"sale_number"  json:"sale_number"`
 	CustomerId string             `bson:"customer_id"  json:"customer_id"`
 	BatchId    string             `bson:"batch_id"   json:"batch_id"`
+	SaleId     string             `bson:"sale_id" json:"sale_id"`
 	CreatedAt  time.Time          `bson:"created_at"  json:"created_at"`
 	UpdatedAt  time.Time          `bson:"updated_at"  json:"updated_at"`
 }
