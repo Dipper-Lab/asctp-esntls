@@ -7,10 +7,10 @@ import (
 )
 
 type ZeroFlyBag struct {
-	Id        primitive.ObjectID   `bson:"_id"`
-	BagNumber string               `bson:"bag_number" json:"bag_number"`
-	NFCUID    string               `bson:"nfc_uid" json:"nfc_uid"`
-	History   map[string]time.Time `bson:"history" json:"history"`
+	Id        primitive.ObjectID              `bson:"_id"`
+	BagNumber string                          `bson:"bag_number" json:"bag_number"`
+	NFCUID    string                          `bson:"nfc_uid" json:"nfc_uid"`
+	History   map[string]map[string]time.Time `bson:"history" json:"history"`
 	/*
 		batch_id:{
 			attached_at: time.Time,
