@@ -5,7 +5,7 @@ import (
 )
 
 type User struct {
-	Id           *string   `bson:"_id" json:"id" validate:"required"`
+	Id           string    `bson:"_id" validate:"required"`
 	Username     string    `bson:"username" json:"username" validate:"required,min=5,max=50"`
 	Password     string    `bson:"password" json:"password" validate:"required"`
 	Role         string    `bson:"role" json:"role" validate:"required"`
