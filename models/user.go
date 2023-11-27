@@ -13,7 +13,7 @@ type User struct {
 	Facility     string    `bson:"facility" json:"facility" validate:"required"`
 	FirstName    *string   `bson:"first_name" json:"first_name" validate:"required,min=2,max=50"`
 	LastName     *string   `bson:"last_name" json:"last_name" validate:"required,min=2,max=50"`
-	Email        *string   `bson:"email" json:"email" validate:"required,email"`
+	Email        *string   `bson:"email" json:"email" validate:"email"`
 	Phone        string    `bson:"phone" json:"phone" validate:"required,min=10,max=10"`
 	Token        *string   `bson:"token" json:"token"`
 	RefreshToken *string   `bson:"refresh_Token" json:"refresh_Token"`
