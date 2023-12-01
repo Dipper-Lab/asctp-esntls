@@ -60,7 +60,7 @@ func SendVerificationEMail(name string, token string, email string) {
 
         <p>Welcome to AgroTrace. To complete the registration process, please click the link below to verify your email address:</p>
 
-        <p><a href="https://asctp-auth.onrender.com/account/verifiy/%s/%s" style="display: inline-block; padding: 10px 20px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 5px;">Verify Now</a></p>
+        <p><a href="https://asctp-auth.onrender.com/account/verify/%s/%s" style="display: inline-block; padding: 10px 20px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 5px;">Verify Now</a></p>
 
         <p>If you did not sign up for an account, you can ignore this email.</p>
 
