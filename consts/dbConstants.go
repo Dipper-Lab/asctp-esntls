@@ -1,6 +1,8 @@
 package consts
 
 const SystemDbName = "system-db"
+const OrgCollectionName = "organisation"
+const TempOrgCollectionName = "tempOrg"
 
 const SupplierCollectionName = "supplier"
 const ProduceCollectionName = "produce"
