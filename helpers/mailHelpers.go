@@ -51,22 +51,22 @@ func SendVerificationEMail(name string, token string, email string) {
 
 	sender := mail.NewGmailSender(emailSenderName, emailSenderAddress, emailSenderPassword)
 
-	subject := "ASCTP Email Verification"
+	subject := "AgroTrace Email Verification"
 
 	content := fmt.Sprintf(`
 	<h2 style="color: #007bff;">Verify Your Account</h2>
 
         <p>Hello %s,</p>
 
-        <p>Thank you for creating an account. To complete the registration process, please click the link below to verify your email address:</p>
+        <p>Welcome to AgroTrace. To complete the registration process, please click the link below to verify your email address:</p>
 
-        <p><a href="https://asctp-auth.onrender.com/account/verifiy/%s" style="display: inline-block; padding: 10px 20px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 5px;">Verify Now</a></p>
+        <p><a href="https://asctp-auth.onrender.com/account/verifiy/%s/%s" style="display: inline-block; padding: 10px 20px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 5px;">Verify Now</a></p>
 
         <p>If you did not sign up for an account, you can ignore this email.</p>
 
-        <p>Thank you,<br>Your Website Team</p>
+        <p>Thank you,<br>DIPPER Lab</p>
 
-	`, name, token)
+	`, name, email, token)
 
 	to := []string{email}
 
