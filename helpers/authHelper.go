@@ -1,14 +1,10 @@
 package helpers
 
 import (
-	"fmt"
 	"log"
 	"math/rand"
-	"os"
 	"time"
 
-	"github.com/dipper-lab/asctp-esntls/mail"
-	"github.com/joho/godotenv"
 	"golang.org/x/crypto/bcrypt"
 )
 
@@ -48,33 +44,4 @@ func PasswordGenerator() string {
 		b[i] = letterBytes[rand.Intn(len(letterBytes))]
 	}
 	return string(b)
-}
-
-func SendMail(username string, password string, userEmail string) {
-
-	err := godotenv.Load(".env")
-	if err != nil {
-		log.Fatal("Error loading .env file")
-	}
-
-	emailSenderName := os.Getenv("EMAIL_SENDER_NAME")
-	emailSenderAddress := os.Getenv("EMAIL_SENDER_ADDRESS")
-	emailSenderPassword := os.Getenv("EMAIL_SENDER_PASSWORD")
-
-	sender := mail.NewGmailSender(emailSenderName, emailSenderAddress, emailSenderPassword)
-
-	subject := "ASCTP Mobile Logins"
-
-	content := fmt.Sprintf(`
-	<h1>Here are your logins for the ASCTP Mobile App</h1>
-	<p>Username: %s </p>
-	<p>Password: %s </p>
-	`, username, password)
-
-	to := []string{userEmail}
-
-	err = sender.SendMail(subject, content, to, nil, nil, nil)
-	if err != nil {
-		fmt.Print(err)
-	}
 }
