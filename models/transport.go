@@ -11,6 +11,7 @@ type Transport struct {
 	Name          string             `bson:"name" json:"name"`
 	SourceID      string             `bson:"source_id" json:"source_id"`
 	TransportID   string             `bson:"transport_id" json:"transport_id"`
+	License       string             `bson:"license" json:"license"`
 	TransporterID string             `bson:"transporter_id" json:"transporter_id"`
 	FacilityID    string             `bson:"facility_id" json:"facility_id"`
 	NfcUids       []string           `bson:"nfc_uid" json:"nfc_uid"`
@@ -20,3 +21,6 @@ type Transport struct {
 	UpdatedAt     time.Time          `bson:"updated_at" json:"updated_at"`
 	Status        string             `bson:"status" json:"status"` //pending, initiated, arrived
 }
+
+//Initiated at,  Received At, Source
+//
