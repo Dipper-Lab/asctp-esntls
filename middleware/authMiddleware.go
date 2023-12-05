@@ -13,7 +13,7 @@ func Authenticate() gin.HandlerFunc {
 		clientToken := c.Request.Header.Get("token")
 
 		if clientToken == "" {
-			c.JSON(http.StatusInternalServerError, gin.H{"error": fmt.Sprintf("No authorization")})
+			c.JSON(http.StatusUnauthorized, gin.H{"error": fmt.Sprintf("No authorization")})
 			c.Abort()
 			return
 		}
@@ -21,7 +21,7 @@ func Authenticate() gin.HandlerFunc {
 		claims, err, _ := helpers.ValidateToken(clientToken)
 
 		if err != "" {
-			c.JSON(http.StatusInternalServerError, gin.H{"error": err})
+			c.JSON(http.StatusUnauthorized, gin.H{"error": err})
 			c.Abort()
 			return
 		}
