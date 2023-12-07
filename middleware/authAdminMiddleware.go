@@ -18,9 +18,9 @@ func AdminAuthenticate() gin.HandlerFunc {
 			return
 		}
 
-		claims, err, _ := helpers.ValidateOrgToken(clientToken)
+		claims, err, valid := helpers.ValidateOrgToken(clientToken)
 
-		if err != "" {
+		if err != "" || !valid {
 			c.JSON(http.StatusUnauthorized, gin.H{"error": err})
 			c.Abort()
 			return
