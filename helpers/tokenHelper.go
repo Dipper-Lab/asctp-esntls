@@ -38,7 +38,7 @@ func GenerateAllTokens(id string, username string, role string, facility string,
 		OrgId:    orgId,
 		StandardClaims: jwt.StandardClaims{
 			// ExpiresAt: time.Date(now.Year(), now.Month(), now.Day(), 23, 59, 59, 0, now.Location()).Unix(),
-			ExpiresAt: time.Now().Add(5 * time.Minute).Unix(),
+			ExpiresAt: time.Now().Add(1 * time.Minute).Unix(),
 		},
 	}
 	refreshClaims := &UserSignedDetails{StandardClaims: jwt.StandardClaims{
