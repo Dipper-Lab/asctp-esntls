@@ -28,7 +28,7 @@ var userSecretKey = os.Getenv("USER_SECRET_KEY")
 
 func GenerateAllTokens(id string, username string, role string, facility string, orgId string) (signedToken string, signedRefreshToken string, err error) {
 
-	// now := time.Now().Local()
+	now := time.Now().Local()
 
 	claims := &UserSignedDetails{
 		Id:       id,
@@ -37,8 +37,7 @@ func GenerateAllTokens(id string, username string, role string, facility string,
 		Facility: facility,
 		OrgId:    orgId,
 		StandardClaims: jwt.StandardClaims{
-			// ExpiresAt: time.Date(now.Year(), now.Month(), now.Day(), 23, 59, 59, 0, now.Location()).Unix(),
-			ExpiresAt: time.Now().Local().Add(time.Minute).Unix(),
+			ExpiresAt: time.Date(now.Year(), now.Month(), now.Day(), 23, 59, 59, 0, now.Location()).Unix(),
 		},
 	}
 	refreshClaims := &UserSignedDetails{StandardClaims: jwt.StandardClaims{

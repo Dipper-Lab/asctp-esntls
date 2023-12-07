@@ -28,7 +28,7 @@ var orgSecretKey = os.Getenv("ORG_SECRET_KEY")
 
 func GenerateAllOrgTokens(id string, name string, orgId string, email string) (signedToken string, signedRefreshToken string, err error) {
 
-	now := time.Now().Local()
+	// now := time.Now().Local()
 
 	claims := &OrgSignedDetails{
 		Id:    id,
@@ -36,7 +36,8 @@ func GenerateAllOrgTokens(id string, name string, orgId string, email string) (s
 		OrgId: orgId,
 		Email: email,
 		StandardClaims: jwt.StandardClaims{
-			ExpiresAt: time.Date(now.Year(), now.Month(), now.Day(), 23, 59, 59, 0, now.Location()).Unix(),
+			// ExpiresAt: time.Date(now.Year(), now.Month(), now.Day(), 23, 59, 59, 0, now.Location()).Unix(),
+			ExpiresAt: time.Now().Local().Add(time.Minute).Unix(),
 		},
 	}
 	refreshClaims := &OrgSignedDetails{StandardClaims: jwt.StandardClaims{
