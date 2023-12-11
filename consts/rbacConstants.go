@@ -1,6 +1,7 @@
 package consts
 
 const PurchaseFeatures = "PURCHASE"
+const SupplierFeatures = "SUPPLIER-ADD"
 const ReceiveFarmBags = "RECEIVE-FB"
 const ReceiveZeroFlyBags = "RECEIVE-ZFB"
 const BatchFarmBags = "BATCH-FB"
@@ -17,10 +18,13 @@ const FarmBagsView = "FB-VIEW"
 const ZeroFlyBagView = "ZFB-VIEW"
 const ReportsView = "REPORTS-VIEW"
 const TransportView = "TRANSPORT-VIEW"
+const ProduceView = "PRODUCE-VIEW"
+const SupplierView = "SUPPLIER-VIEW"
 
 var RBACMap = map[string][]string{
 	"ADMIN": {
 		PurchaseFeatures,
+		SupplierFeatures,
 		ReceiveFarmBags,
 		ReceiveZeroFlyBags,
 		BatchFarmBags,
@@ -36,9 +40,12 @@ var RBACMap = map[string][]string{
 		ZeroFlyBagView,
 		ReportsView,
 		TransportView,
+		ProduceView,
+		SupplierView,
 	},
-	"FIELD-OFFICER": {
+	"FO": {
 		PurchaseFeatures,
+		SupplierFeatures,
 		ReceiveFarmBags,
 		BatchFarmBags,
 		BatchZeroFlyBags,
@@ -49,11 +56,14 @@ var RBACMap = map[string][]string{
 		PurchaseView,
 		ZeroFlyBagView,
 		TransportView,
+		ProduceView,
+		SupplierView,
 	},
 	"ATTENDANT": {
 		ReceiveZeroFlyBags,
 		TransportInitiate,
 		TransportReceive,
+		ProduceView,
 		Reports,
 	},
 }
