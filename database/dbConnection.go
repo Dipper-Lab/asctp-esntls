@@ -5,6 +5,9 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"path"
+	"path/filepath"
+	"runtime"
 	"time"
 
 	"github.com/joho/godotenv"
@@ -39,7 +42,8 @@ var Client *mongo.Client = DbInstance()
 
 func OpenCollection(client *mongo.Client, dbName string, collectionName string) *mongo.Collection {
 
-	err := godotenv.Load(".env")
+	err := godotenv.Load(filepath.Join(rootDir(), ".env"))
+	// err := godotenv.Load(".env")
 	if err != nil {
 		log.Fatal("Error loading .env file")
 	}
@@ -64,4 +68,10 @@ func CheckIfDbExistsInCluster(client *mongo.Client, dbName string) bool {
 
 	return false
 
+}
+
+func rootDir() string {
+	_, b, _, _ := runtime.Caller(0)
+	d := path.Join(path.Dir(b))
+	return filepath.Dir(d)
 }
