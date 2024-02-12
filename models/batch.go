@@ -16,6 +16,7 @@ type Batch struct {
 	BatchId         string             `bson:"batch_id" json:"batch_id"`
 	MoistureHistory []Moisture         `bson:"moisture" json:"moisture"`
 	NfcUids         []string           `bson:"nfc_uid" json:"nfc_uid"`
+	Notes           []Note             `bson:"notes" json:"notes"`
 	CreatedAt       time.Time          `bson:"created_at" json:"created_at"`
 	UpdatedAt       time.Time          `bson:"updated_at" json:"updated_at"`
 }
