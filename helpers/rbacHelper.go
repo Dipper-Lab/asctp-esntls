@@ -3,7 +3,7 @@ package helpers
 import (
 	"net/http"
 
-	"github.com/dipper-lab/asctp-esntls/consts"
+	"github.com/dipper-lab/asctp-esntls/v2/consts"
 	"github.com/gin-gonic/gin"
 	"golang.org/x/exp/slices"
 )

@@ -1,4 +1,4 @@
-module github.com/dipper-lab/asctp-esntls
+module github.com/dipper-lab/asctp-esntls/v2
 
 go 1.21.1
 

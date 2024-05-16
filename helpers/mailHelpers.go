@@ -5,7 +5,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/dipper-lab/asctp-esntls/mail"
+	"github.com/dipper-lab/asctp-esntls/v2/mail"
 	"github.com/joho/godotenv"
 )
 
