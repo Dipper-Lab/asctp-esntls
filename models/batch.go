@@ -8,6 +8,7 @@ import (
 
 type Batch struct {
 	Id              primitive.ObjectID `bson:"_id" validate:"required"`
+	Name            string             `bson:"name" json:"name" validate:"required,min=2,max=15"`
 	BatchNumber     string             `bson:"batch_number" json:"batch_number"`
 	ProduceId       string             `bson:"produce_id" json:"produce_id"`
 	FarmBagIds      []string           `bson:"farmBags" json:"farmBags"`
