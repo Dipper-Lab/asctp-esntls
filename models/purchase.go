@@ -13,6 +13,7 @@ type Purchase struct {
 	SupplierId    string             `bson:"supplier_id" json:"supplier_id"`
 	BuyerUsername string             `bson:"buyer_username"  json:"buyer_username"`
 	Cost          float32            `bson:"cost" json:"cost"`
+  GeneralWeight float32            `bson:"g_weight" json:"g_weight"`
 	FarmerBagIds  []string           `bson:"farmerBag_ids" json:"farmerBag_ids"`
 	PurchaseId    string             `bson:"purchase_id" json:"purchase_id"`
 	CreatedAt     time.Time          `bson:"created_at"  json:"created_at"`
